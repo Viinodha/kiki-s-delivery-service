@@ -1,0 +1,782 @@
+* {
+    margin: 0;
+    padding:0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+header.hero{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url("images/sky.png");
+    background-size: cover;
+    background-position: center;
+}
+
+header.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+}
+
+.hero h1{
+    position: relative;
+    z-index: 1;
+    color: cornsilk;
+}
+.middle {
+    display: flex;
+    gap: 20px;
+}
+main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+    height: 6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    position: relative;
+}
+
+nav button {
+    cursor: pointer;
+    font-size: x-large;
+    font-family: cursive;
+    border: none;
+    background-color: cornsilk;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    position: relative;
+    color:#4A2C17;
+    border-radius: 0.5rem;
+    gap: 20px;
+    box-shadow: 3px 5px 0 #927d6e ;
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    color:#F5E1B8;
+    background-color: #8B5A2B;
+}
+
+nav button:active{
+    color:#f1e3cf;
+    background-color: #d7aa7f;
+}
+
+body {
+    background-color: #F5E1B8; /* warm cream */
+}
+
+#music-toggle {
+    background-color: #f8f1e5;
+    border: none;
+    border-radius: 70%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    
+}
+#music-toggle:hover{
+        background-color: #8B5A2B;
+
+}
+#music-toggle:active{
+    background-color: #d7aa7f;
+}    
+.music-icon {
+    width: 120px;
+    height: 120px;
+}
+.music-icon-hidden {
+    display: none;
+}
+
+h1 {
+    font-family: "New Tegomin",sans-serif;
+    font-weight: 1200;
+    font-size:4rem;
+    text-align: center;
+    padding-top: 1rem;
+    color:#4A2C17;
+
+
+}
+h4 {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 100;
+    text-align:center;
+    color:#f8f1e5;
+}
+
+
+.kiki-fly {
+    position: absolute;
+    width: 200px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    animation: sparkleFade 0.8s ease-out forwards;
+}
+
+.sparkle-star {
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #fff8e1 0%, #f2d98a 60%, transparent 80%);
+    clip-path: polygon(
+        50% 0%, 61% 35%, 100% 50%, 61% 65%,
+        50% 100%, 39% 65%, 0% 50%, 39% 35%
+    );
+}
+
+.sparkle-blossom {
+    font-size: 14px;
+    line-height: 1;
+}
+
+@keyframes sparkleFade {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3) translateY(12px) rotate(20deg);
+    }
+}
+
+
+
+#about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 60px;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding-bottom: 60px;
+}
+
+.photo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.about {
+        font-family: "New Tegomin",sans-serif;
+        color:#4A2C17;
+        text-align: center;
+        font-size: 3rem;
+        
+        padding-bottom:10px ;
+        padding-top: 50px;
+}
+
+.about-text {
+    max-width: 360px;
+    background: #fff9ee;
+    border: 2px dashed #d9a056;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 4px 6px 0 #e8c9a0;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    flex: 0 0 360px;
+    
+}
+
+.about-text:hover {
+    transform: rotate(0deg) scale(1.05);
+    transition: all 0.4s ease;
+}
+
+.about-text p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4A2C17;
+}
+
+.about-text p::first-letter {
+    font-family: "New Tegomin", serif;
+    font-size: 2.4rem;
+    float: left;
+    line-height: 1;
+    padding-right: 8px;
+    color: #B6342F;
+}
+
+.about-text, .photo-container {
+    opacity: 1;
+    transform: none;
+}
+
+.about-text.revealed { opacity: 1; transform: translateX(0) rotate(-1.5deg); }
+.photo-container.revealed { opacity: 1; transform: translateX(0); }
+
+.kiki-card {
+    position: relative;
+    width: 250px;
+    border: 10px solid #2E3A6B;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor:grab;
+}
+
+.kiki-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* slight individual tilt per card, like loosely scattered photos */
+.kiki-card { transform: rotate(-4deg); }
+.jiji-card { transform: rotate(5deg); }
+.owner-card { transform: rotate(-3deg); }
+
+.kiki-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.card-info {
+    position: absolute;
+    inset: 0;
+    background: rgba(53, 34, 0, 0.482);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.kiki-card:hover .card-info {
+    opacity: 1;
+}
+
+
+.jiji-card {
+    position: relative;
+    width: 250px;
+    border: 10px solid #B6342F;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: grab;
+    transition: all 0.4s ease;
+}
+
+.jiji-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* slight individual tilt per card, like loosely scattered photos */
+
+.jiji-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+
+.jiji-card:hover .card-info {
+    opacity: 1;
+}
+
+
+.owner-card {
+    position: relative;
+    width: 250px;
+    border: 10px solid #4A2C17;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: grab;
+    transition: all 0.4s ease;
+}
+
+.owner-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+.owner-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+
+.owner-card:hover .card-info {
+    opacity: 1;
+}
+
+.menu-title {
+    font-family: "New Tegomin",sans-serif;
+    color:#4A2C17;
+    text-align: center;
+    font-size: 4rem;
+        
+    padding-bottom:0%;
+    padding-top: 20px;
+}
+
+#menu-section {
+    padding: 5rem 7rem;
+    background-color: #e8c9a0;
+    background-image:linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px);
+    border-radius: 1.5rem;
+    
+    background-size: 20px 20px;
+}
+
+.bread-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bread-card {
+    flex: 0 0 250px;
+    min-width: 0;
+    width: 250px;
+    background: #f8f1e5;
+    padding: 2.5rem 2.5rem;
+    border: 1px solid #927d6e;
+    border-radius: 1.5rem;
+    text-align: center;
+    height: 350px;
+    cursor: grab;
+    box-shadow: 0 4px 10px rgba(74, 44, 23, 0.3);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bread-card:hover {
+    background-color: #d7aa7f;
+    border-color: #4A2C17;
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 8px 18px rgba(74, 44, 23, 0.4);
+}
+
+
+.bread-card:active {
+    cursor: grabbing;
+}
+
+.bread-art {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.bread-card h3 {
+    font-size: 1.1rem;
+    margin-top: 2.5rem;
+    color: #3b1f14;
+    font-family: "New Tegomin",sans-serif;
+}
+
+.bread-card p {
+    font-family: cursive;
+    color: #3b1f14;
+    font-size: 0.85rem;
+    line-height: 1.3rem;
+    margin-top: 0.8rem;
+    font-weight: 300;
+    overflow-wrap:break-word;
+    word-wrap: break-word;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3b1f14;
+    background-color: #e8c9a0;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+}
+
+.bakery-name {
+    text-align: center;
+    padding: 20px 20px;
+    color:#4A2C17;
+    font-family: "New Tegomin", sans-serif;
+    font-size: medium;
+    padding-bottom:20px;
+    padding-top:0%;
+    
+}
+
+.delivery-title {
+    font-family: "New Tegomin", sans-serif;
+    color: #4A2C17;
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 50px;
+}
+
+.delivery-intro {
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+    text-align: center;
+    color:#4A2C17;
+    font-size: medium;
+    font-family: "Lora";
+    
+    line-height: 1.5;
+}
+
+
+.delivery-forms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 4rem;
+}
+
+.delivery-card {
+    position: relative;
+    background: #f8f1e5;
+    border: 1px solid #927d6e;
+    border-radius: 1.5rem;
+    padding: 2rem 2.5rem;
+    width: 320px;
+    box-shadow: 
+     0 4px 10px rgba(74, 44, 23, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.delivery-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    background: #f1e3cf;
+    border: 1px solid #927d6e;
+    transform: rotate(-3deg);
+    z-index: -1;
+}
+
+.delivery-card::after {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 90px;
+    height: 26px;
+    background: rgba(98, 41, 9, 0.597);
+    border: 1px solid rgba(161, 61, 44, 0.3);
+}
+
+.delivery-card {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.delivery-card {
+    box-shadow: 
+        0 10px 22px rgba(74, 44, 23, 0.25),
+        0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    transform: translateY(-4px);
+}
+
+.delivery-card fieldset {
+    border: none;
+    padding: 0;
+}
+
+.delivery-card legend {
+    font-family: "New Tegomin", sans-serif;
+    font-size: 1.7rem;
+    color: #4A2C17;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.delivery-card label {
+    display: block;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9rem;
+    color: #4A2C17;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.delivery-card input,
+.delivery-card select {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #927d6e;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 0.9rem;
+    color: #4A2C17;
+}
+
+.delivery-card select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%234A2C17'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 10px 6px;
+}
+
+.delivery-card button {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.6rem 1.8rem;
+    background-color: #4A2C17;
+    color: cornsilk;
+    border: none;
+    border-radius: 999px;
+    font-family:"New Tegomin",sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.delivery-card button:hover {
+    background-color: #4A2C17;
+    transform: translateY(-2px);
+}
+
+.delivery-card button:active {
+    background-color: #d7aa7f;
+    color:#3b1f14;
+}
+
+.delivery-status {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-family: "New Tegomin", sans-serif;
+    color: #4A2C17;
+    opacity: 3;
+    transition: opacity 0.4s ease;
+}
+
+.delivery-status.visible {
+    opacity: 1;
+}
+
+.broom-icon {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+@keyframes fly {
+    0% { transform: translateX(-150px) rotate(-15deg); opacity: 0; }
+    50% { transform: translateX(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    position:relative;
+    background-color: #4A2C17;
+    color: #f8f1e5;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    font-family: "New Tegomin", sans-serif;
+    border-top: 3px dashed #d7aa7f;
+}
+
+footer .content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+footer .content p:first-child {
+    padding-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+footer .content p:nth-child(2),
+footer .content p:last-child {
+    padding-top:20px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #d8c3a5;
+}
+
+footer .content i {
+    font-style: italic;
+    color: #f3d9b1;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #4A2C17;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.icons img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.icons a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(182, 117, 31, 0.636);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0.75rem 0;
+        gap: 10px;
+    }
+
+    nav button {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    #about-section {
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .about-text {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .photo-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .kiki-card,
+    .jiji-card,
+    .owner-card {
+        width: 200px;
+    }
+
+    .kiki-card img,
+    .jiji-card img,
+    .owner-card img {
+        height: 260px;
+    }
+
+    .menu-title {
+        font-size: 2.5rem;
+    }
+
+    #menu-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .delivery-title {
+        font-size: 2.2rem;
+    }
+
+    .delivery-card {
+        width: 100%;
+        max-width: 340px;
+        padding: 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .kiki-card,
+    .jiji-card,
+    .owner-card {
+        width: 160px;
+    }
+
+    .kiki-card img,
+    .jiji-card img,
+    .owner-card img {
+        height: 210px;
+    }
+
+    .bread-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .delivery-card {
+        padding: 1.25rem 1.25rem;
+    }
+
+    nav button {
+        font-size: 0.9rem;
+        padding: 0 0.75rem;
+    }
+}

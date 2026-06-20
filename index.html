@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--chrome page-->
+    <title>KIKI DELIVERY SERVICE</title>
+    <link rel="icon" href="./images/baguette.png" type="image/png">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!--nav bar-->
+    <header class="hero">
+        <nav>
+            <div class="nav-left">
+                <button id="music-toggle" aria-label="Turn music on">
+                    <img src="images/jijimusic.png" alt="Music off" id="play-icon" class="music-icon">
+                    <img src="images/jijivibing.png" alt="Music on" id="pause-icon" class="music-icon music-icon-hidden">
+                </button>
+            </div>
+            <div class="middle">
+                <button class="about-button" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">About us</button>
+                <button class="menu-button" onclick="document.getElementById('menu-section').scrollIntoView({behavior: 'smooth'})">Menu</button>
+                <button class="delivery-button" onclick="document.getElementById('delivery-section').scrollIntoView({behavior: 'smooth'})">Delivery</button>
+
+            </div>
+            <audio id="background-music" src="images/bakery-music.mp3" type="audio/mpeg" loop></audio>
+        
+        </nav>
+        <h1>おとどけものいたしますキキ</h1>
+        <h4>Kiki's Delivery Service</h4>
+        
+        <img src="images/kikiflying.png" alt="Kiki" class="kiki-fly">
+
+        
+    </header>
+
+<main>
+    <h1 class="about">About Us</h1>
+
+    <section id="about-section">
+        <div class="about-text">
+            <p>Hello!🫧 Welcome to Kiki&#39;s Delivery Service ! In the bustling seaside city of Koriko, Kiki, a young witch with the power of flight, starts her own delivery and courier service. With her sassy cat Jiji by her side, she helps the townspeople by delivering everything from freshly baked goods to urgent personal packages!☁️</p>
+        </div>
+        <div class="photo-container">
+        <div class="kiki-card">
+            <img src="images/kikibio.jpg" alt="Kiki">
+
+        <div class="card-info">
+            <h3>Kiki</h3>
+                <p>The founder of Kiki's Delivery Service</p>
+        </div>
+        </div>
+        <div class ="jiji-card">
+            <img src="images/jijicat.jpg" alt="Jiji">
+        <div class ="card-info">
+            <h3>Jiji</h3>
+            <p>The sassy cat of Kiki</p>
+        </div>
+
+        </div>
+        <div class="owner-card">
+            <img src="images/osona.jpg" alt="Owners">
+            <div class ="card-info">
+            <h3>Osona and Fukuo </h3>
+            <p>The owners of the Gütiokipänja Bakery</p>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="menu-section">
+        <h1 class="menu-title">Menu</h1>
+        <h3 class="bakery-name">From The Gütiokipänja Bakery</h3>
+        <div class="bread-menu">
+            <article class="bread-card">
+            <img class="bread-art" src="images/bread.png" alt="Freshly baked milkbreads">
+            <h3>
+                Milk Bread
+            </h3>
+            <p>Cloud-like bread with a warm, comforting sweetness</p>
+            <p class="price">¥280</p>
+
+            </article>
+        
+            <article class="bread-card">
+                <img class="bread-art" src="images/baguette.png" alt="hsj">
+                <h3>Baguette</h3>
+                <p>Crispy golden bread with a light, airy center</p>
+                <p class="price">¥380</p>
+
+            </article>
+
+            <article class="bread-card">
+                <img class="bread-art" src="images/sourdough.png" alt="gdtghdgg">
+                <h3>Sourdough</h3>
+                <p>Tangy, chewy artisan bread with rich depth</p>
+                <p class="price">¥450</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="delivery-section">
+        <h1 class="delivery-title">Orders and Delivery</h1>
+        <p class="delivery-intro">We offer two services: Delivering freshly baked goods from the Guchokipanya Bakery, and Kiki's personal delivery service, where she picks up items from your doorstep and delivers them safely across the city.</p>
+
+    <div class="delivery-forms">
+        <form id="bakery-form" class="delivery-card">
+            <fieldset>
+                <legend>Avail Baked Goods Here</legend>
+
+                <label for="bakery-name">Name</label>
+                <input id="bakery-name" type="text" required>
+
+                <label for="bread">Bread</label>
+                <input id="bread" type="number" min="0" max="15" value="0">
+
+                <label for="baguette">Baguette</label>
+                <input id="baguette" type="number" min="0" max="15" value="0">
+
+                <label for="sourdough">Sourdough</label>
+                <input id="sourdough" type="number" min="0" max="15" value="0">
+
+                <label for="bakery-province">Deliver to</label>
+                <select id="bakery-province">
+                    <option value="">Select a location</option>
+                    <option value="Koriko City Center">Koriko City Center</option>
+                    <option value="Clock Tower District">Clock Tower District</option>
+                    <option value="The Harbor">The Harbor</option>
+                    <option value="Market Square">Market Square</option>
+                    <option value="Tombo's Workshop">Tombo's Workshop</option>
+                    <option value="Ursula's Forest Cabin">Ursula's Forest Cabin</option>
+                </select>
+
+                <button type="submit">Place Order</button>
+            </fieldset>
+        </form>
+
+        <form id="personal-delivery-form" class="delivery-card">
+            <fieldset>
+                <legend>Avail Personal Delivery</legend>
+                <label for="sender-name">Name</label>
+                <input id="sender-name" type="text" required>
+
+                <label for="weight">Weight of package (Kg)</label>
+                <input id="weight" type="number" min="1" max="20">
+
+                <label for="pickup-province">Pickup location</label>
+                <select id="pickup-province">
+                    <option value="">Select a location</option>
+                    <option value="Koriko City Center">Koriko City Center</option>
+                    <option value="Clock Tower District">Clock Tower District</option>
+                    <option value="The Harbor">The Harbor</option>
+                    <option value="Market Square">Market Square</option>
+                    <option value="Tombo's Workshop">Tombo's Workshop</option>
+                    <option value="Ursula's Forest Cabin">Ursula's Forest Cabin</option>
+                </select>
+
+                <label for="destination">Destination</label>
+                <select id="destination">
+                    <option value="">Select a destination</option>
+                    <option value="Koriko City Center">Koriko City Center</option>
+                    <option value="Clock Tower District">Clock Tower District</option>
+                    <option value="The Harbor">The Harbor</option>
+                    <option value="Market Square">Market Square</option>
+                    <option value="Tombo's Workshop">Tombo's Workshop</option>
+                    <option value="Ursula's Forest Cabin">Ursula's Forest Cabin</option>
+                </select>
+
+                <button type="submit">Send Package</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="delivery-status" class="delivery-status hidden">
+        <span class="broom-icon">🧹</span>
+        <p id="delivery-message"></p>
+    </div>
+    </section>
+</main>
+
+<footer>
+    <h2>Contact here</h2>
+    <div class="icons">
+        <a href="https://github.com/Viinodha" target="_blank">
+            <img src="images/githubicon.jpg" alt="github icon">
+        </a>
+        <a href="mailto:vinodha287@gmail.com" target="_blank">
+            <img src="images/gmailicon.jpg" alt="Gmail icon">
+        </a>
+        <a href="https://www.linkedin.com/in/vinodha-selvan-5ba7593a9/" target="_blank">
+            <img src="images/linkedin-icon.jpg" alt="Linkedin icon">
+        </a>
+    </div>
+    <div class="content">
+        <p>Made with Love by Vino🧡</p>
+        <p>This website is a fan-made fictional delivery service website inspired by the movie <i>Kiki's Delivery Service</i> by <i>Studio Ghibli.</i></p>
+        <p>All the artwork's original rights belongs to their respective owners.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
