@@ -1,5 +1,6 @@
 𝙆𝙞𝙠𝙞'𝙨 𝘿𝙚𝙡𝙞𝙫𝙚𝙧𝙮 𝙎𝙚𝙧𝙫𝙞𝙘𝙚 𝙒𝙚𝙗𝙨𝙞𝙩𝙚 🧚🏻‍♀️
 
+<img width="1882" height="907" alt="Screenshot 2026-06-22 230044" src="https://github.com/user-attachments/assets/775db549-c539-4584-9b8a-fe3c7046c562" />
 
 It's been 𝟹𝟽 years since the release of Kiki's Delivery Service, and I thought there was no better time to create a little tribute to one of my favorite movies. 🎥👏🏼
 
